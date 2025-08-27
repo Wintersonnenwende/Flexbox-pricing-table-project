@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+        body {
+            font-family: "Sono", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            background-image: 
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)),
+            url("earth.png");
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /* optional */
+        }
+        
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 40px;
+            height: 100vh;
+            flex-wrap: wrap;
+        }
+
+        .pricing-plan {
+            background-color: rgba(128, 128, 128, 0.4);
+            padding: 30px;
+            border-radius: 39px;
+            text-align: center;
+            height: 250px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #basic {
+            border-style: solid;
+            border-color: rgb(176, 106, 35, 0.5);
+            border-width: 3px;
+            background-color: rgba(167, 185, 201, 0.25);
+
+            
+            
+        }
+
+        #standard {
+            border-style: solid;
+            border-color: rgb(164, 164, 164, 0.5);
+            border-width: 3px;
+            background-color: rgba(167, 185, 201, 0.25);
+        }
+        
+        #premium {
+            border-style: solid;
+            border-color: rgb(194, 165, 2, 0.5);
+            border-width: 3px;
+            background-color: rgba(167, 185, 201, 0.25);
+        }
+
+        .plan-title, .plan-price {
+            text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px  1px 0 black,
+            1px  1px 0 black;
+        }
+
+        
+        #basic .plan-title {
+            color: rgb(176, 106, 35);
+            font-weight: bold;
+            font-size: 20px;  
+        }
+        
+        #basic .plan-price {
+            color: rgb(176, 106, 35);
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+
+        #standard .plan-title {
+            color: rgb(164, 164, 164);
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+        
+        #standard .plan-price {
+            color: rgb(164, 164, 164);
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+       
+
+
+        #premium .plan-title {
+            color: rgb(194, 165, 2);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        #premium .plan-price {
+            color: rgb(194, 165, 2);
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        .plan-button {
+            font-size: 1rem;
+            padding: 10px 14px;
+            background-color: rgb(255, 255, 255, 0.3);
+            border: none;
+            border-radius: 39px;
+            color: white;
+            cursor: pointer;
+            
+        }
+
+        .plan-button:hover {
+            background-color: rgb(0, 175, 255, 0.6);
+            color: white;
+        }
+        
+        .pricing-plan:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .plan-features li {
+            list-style-type: none;
+            color: white; 
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding-bottom: 4px; /* optional spacing */
+        }
+
+        .plan-features .emoji {
+            width: 1.5rem; /* fixed width to align emojis */
+            display: inline-block;
+            text-align: center;
+        }
+
+        footer p{
+            color:white;
+            font-size: 15px;
+            margin-bottom: 100px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 20px;
+                height: auto;
+            }
+
+           .pricing-plan {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="pricing-container">
+        <div class="pricing-plan" id="basic">
+            <div class="plan-title">Basic</div>
+            <div class="plan-price">$9.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 50 GB Storage</li>
+                <li>✅ 1 User</li>
+                <li>🚫 Support</li>
+            </ul>
+            <button class="plan-button">Order Now</button>
+        </div>
+
+        <div class="pricing-plan" id="standard">
+            <div class="plan-title">Standard</div>
+            <div class="plan-price">$19.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 500 GB Storage</li>
+                <li>✅ 5 Users</li>
+                <li>✅ Chat Support</li>
+            </ul>
+            <button class="plan-button">Order Now</button>
+        </div>
+
+        <div class="pricing-plan" id="premium">
+            <div class="plan-title">Premium</div>
+            <div class="plan-price">$49.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 1 TB Storage</li>
+                <li>✅ 10 Users</li>
+                <li>✅ 24/7 Support</li>
+            </ul>
+            <button class="plan-button">Order Now</button>
+        </div>
+    </div>
+    <footer>
+        <p>© Kreis Fabiola. All rights reserved - 2025</p>
+    </footer>
+    
+</body>
+</html>
+
+
+<!-- 
+Image source: https://pixabay.com/hu/illustrations/f%C3%B6ld-hely-napf%C3%A9ny-napsugarak-1756274/ 
+Image by: qimono, from Pixabay 
+-->
